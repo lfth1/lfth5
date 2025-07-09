@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Death Skull</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #ff0000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    body {
+
+    .top-bar {
+      width: 100%;
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 1.1em;
+      color: #aaa;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #222;
+    }
+
+    .header {
+      font-family: 'Creepster', cursive;
+      font-size: 3.5em;
+      margin: 20px 0;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000;
+    }
+
+    .slideshow-container {
+      max-width: 800px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      border: 2px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    .music-button {
+      background: #111;
+      color: #ff0000;
+      border: 2px solid #ff0000;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .music-button:hover {
+      background: #ff0000;
+      color: #000;
+    }
+
+    .music-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    audio {
+      display: none;
+    }
+
+    .footer {
+      font-size: 1.1em;
+      color: #888;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 15px;
+    }
+
+    .footer a {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- شريط علوي -->
+<div class="top-bar">
+  Nawaf & NAIF & DeathRow &lt;3
+</div>
+
+<!-- عنوان الموقع -->
+<div class="header">Death Skull</div>
+
+<!-- زر الموسيقى -->
+<button class="music-button" onclick="toggleMusic()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M9 19V6h13V4H7v15a2 2 0 1 0 2 0z"/>
+  </svg>
+  تشغيل / إيقاف 
+</button>
+
+<!-- مشغل الموسيقى -->
+<audio id="bg-music" autoplay loop>
+  <source src="death_theme.mp3" type="audio/mpeg">
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<!-- السلايد شو -->
+<div class="slideshow-container">
+  <div class="mySlides fade"><img src="1.gif" alt="GIF 1"></div>
+  <div class="mySlides fade"><img src="2.gif" alt="GIF 2"></div>
+  <div class="mySlides fade"><img src="3.gif" alt="GIF 3"></div>
+  <div class="mySlides fade"><img src="4.gif" alt="GIF 4"></div>
+  <div class="mySlides fade"><img src="5.gif" alt="GIF 5"></div>
+  <div class="mySlides fade"><img src="6.gif" alt="GIF 6"></div>
+  <div class="mySlides fade"><img src="7.gif" alt="GIF 7"></div>
+  <div class="mySlides fade"><img src="8.gif" alt="GIF 8"></div>
+  <div class="mySlides fade"><img src="9.gif" alt="GIF 9"></div>
+  <div class="mySlides fade"><img src="10.gif" alt="GIF 10"></div>
+  <div class="mySlides fade"><img src="11.gif" alt="GIF 11"></div>
+  <div class="mySlides fade"><img src="12.gif" alt="GIF 12"></div>
+  <div class="mySlides fade"><img src="13.gif" alt="GIF 13"></div>
+  <div class="mySlides fade"><img src="14.gif" alt="GIF 14"></div>
+  <div class="mySlides fade"><img src="15.gif" alt="GIF 15"></div>
+  <div class="mySlides fade"><img src="16.gif" alt="GIF 16"></div>
+  <div class="mySlides fade"><img src="17.gif" alt="GIF 17"></div>
+  <div class="mySlides fade"><img src="18.gif" alt="GIF 18"></div>
+  <div class="mySlides fade"><img src="19.gif" alt="GIF 19"></div>
+  <div class="mySlides fade"><img src="20.gif" alt="GIF 20"></div>
+  <div class="mySlides fade"><img src="21.gif" alt="GIF 21"></div>
+</div>
+
+<!-- الفوتر -->
+
+
+  <!-- الفوتر -->
+<div class="footer">
+  <strong>My account</strong><br>
+
+  <!-- Kick -->
+  <a href="https://kick.com/ZLF_1" target="_blank" style="margin-right: 10px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" style="vertical-align: middle;">
+      <path fill="#00ff00" d="M4 12v24h8v-8l8 8h8L16 24l12-12h-8l-8 8v-8H4z"/>
+    </svg>
+    Kick
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://tiktok.com/@زلف" target="_blank" style="margin-left: 10px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="vertical-align: middle;">
+      <path fill="#ff0050" d="M12.001 2c1.104 0 2 .896 2 2v6.586l2.707-2.707 1.414 1.414L15.414 13l2.708 2.707-1.414 1.414L14 14.414V21a2 2 0 1 1-4 0v-5.586l-2.707 2.707-1.414-1.414L8.586 13 5.88 10.293l1.414-1.414L10 11.586V4a2 2 0 0 1 2-2z"/>
+    </svg>
+    TikTok
+  </a>
+
+    <br><br>
+My second Discord &lt;3<br>
+  <a href="https://discord.gg/BWzWJpDy6t" target="_blank">Discord.gg/BWzWJpDy6t</a>
+
+  <br><br>
+ Nawaf & NAIF & DeathRow &lt;3<br>
+  <a href="https://discord.gg/mn1" target="_blank">Discord.gg/mn1</a>
+</div>
+
+
+<script>
+  // السلايد شو
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000);
+  }
+
+  // تشغيل/إيقاف الموسيقى
+  const music = document.getElementById("bg-music");
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  // تشغيل تلقائي عند تحميل الصفحة (مع fallback للتفاعل)
+  window.addEventListener("load", () => {
+    music.play().catch(() => {
+      document.addEventListener("click", () => music.play(), { once: true });
+    });
+  });
+  
+</script>
+
+</body>
+</html>
